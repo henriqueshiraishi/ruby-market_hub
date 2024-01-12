@@ -3,7 +3,9 @@
 require "test_helper"
 
 class MarketHub::TestVersion < Minitest::Test
+
   def test_that_it_has_a_version_number
-    refute_nil MarketHub::VERSION
+    refute_nil(MarketHub::VERSION)
   end
+
 end
