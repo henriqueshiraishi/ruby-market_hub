@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.6.0] - 2024-01-18
+
+- Add site, detail and attributes methods in MercadoLivre::Category
+
 ## [0.5.0] - 2024-01-18
 
 - Add predict_category in MercadoLivre::Category
