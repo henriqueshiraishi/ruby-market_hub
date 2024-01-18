@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [0.4.0] - 2024-01-18
+
+- Add MercadoLivre::Authorization with OAuth 2.0
+- Change Utils::OAuth20 with new args and generic behavior
+
 ## [0.3.0] - 2024-01-18
 
 - Organize library folders and classes

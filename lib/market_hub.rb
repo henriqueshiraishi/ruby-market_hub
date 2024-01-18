@@ -17,17 +17,18 @@ require 'market_hub/models/mercado_livre/order'
 
 require 'market_hub/api/base'
 require 'market_hub/api/mercado_livre/client'
+require 'market_hub/api/mercado_livre/authorization'
 
 require 'market_hub/client'
 
 module MarketHub
   # Personalize as configurações padrão da biblioteca usando bloco
   #   MarketHub.configure do |config|
-  #     config.username = "xxx"
-  #     config.password = "xxx"
+  #     config.client_id = "xxx"
+  #     config.client_secret = "xxx"
   #   end
   # Se nenhum bloco for fornecido, retorna o objeto de configuração padrão
-  def self.configurate
+  def self.configure
     if block_given?
       yield(Configuration.default)
     else
