@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.8.0] - 2024-01-18
+
+- Add listing_types_availables, listing_types_downgrades, listing_types_upgrades and update in MercadoLivre::PublicationType
+
 ## [0.7.0] - 2024-01-18
 
 - Add listing_types and listing_exposures methods in MercadoLivre::PublicationType
