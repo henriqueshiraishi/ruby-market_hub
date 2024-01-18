@@ -18,7 +18,7 @@ module MarketHub
           path = path + listing_type_id.to_s unless listing_type_id.nil?
 
           endpoint = URI::HTTPS.build(host: host, path: path)
-          response = Net::HTTP.get_response(endpoint)
+          response = MarketHub::HTTP.get(endpoint)
           JSON.parse(response.body)
         end
 
@@ -28,7 +28,7 @@ module MarketHub
           path = path + listing_exposure_id.to_s unless listing_exposure_id.nil?
 
           endpoint = URI::HTTPS.build(host: host, path: path)
-          response = Net::HTTP.get_response(endpoint)
+          response = MarketHub::HTTP.get(endpoint)
           JSON.parse(response.body)
         end
 
@@ -45,10 +45,7 @@ module MarketHub
 
           endpoint = URI::HTTPS.build(host: host, path: path)
           endpoint.query = URI.encode_www_form(params)
-
-          request = Net::HTTP::Get.new(endpoint)
-          request['Authorization'] = "Bearer #{@access_token}"
-          response = Net::HTTP.start(endpoint.host, endpoint.port, use_ssl: true) { |http| http.request(request) }
+          response = MarketHub::HTTP.get(endpoint, headers: { authorization: "Bearer #{@access_token}" })
           JSON.parse(response.body)
         end
 
@@ -57,9 +54,7 @@ module MarketHub
           path = "/items/#{item_id}/available_upgrades"
 
           endpoint = URI::HTTPS.build(host: host, path: path)
-          request = Net::HTTP::Get.new(endpoint)
-          request['Authorization'] = "Bearer #{@access_token}"
-          response = Net::HTTP.start(endpoint.host, endpoint.port, use_ssl: true) { |http| http.request(request) }
+          response = MarketHub::HTTP.get(endpoint, headers: { authorization: "Bearer #{@access_token}" })
           JSON.parse(response.body)
         end
 
@@ -68,9 +63,7 @@ module MarketHub
           path = "/items/#{item_id}/available_downgrades"
 
           endpoint = URI::HTTPS.build(host: host, path: path)
-          request = Net::HTTP::Get.new(endpoint)
-          request['Authorization'] = "Bearer #{@access_token}"
-          response = Net::HTTP.start(endpoint.host, endpoint.port, use_ssl: true) { |http| http.request(request) }
+          response = MarketHub::HTTP.get(endpoint, headers: { authorization: "Bearer #{@access_token}" })
           JSON.parse(response.body)
         end
 
@@ -79,9 +72,7 @@ module MarketHub
           path = "/items/#{item_id}/listing_type"
 
           endpoint = URI::HTTPS.build(host: host, path: path)
-          request = Net::HTTP::Post.new(endpoint)
-          request['Authorization'] = "Bearer #{@access_token}"
-          response = Net::HTTP.start(endpoint.host, endpoint.port, use_ssl: true) { |http| http.request(request) }
+          response = MarketHub::HTTP.post(endpoint, headers: { authorization: "Bearer #{@access_token}" }, body: { id: listing_type_id })
           JSON.parse(response.body)
         end
 

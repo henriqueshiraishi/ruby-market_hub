@@ -2,14 +2,14 @@
 
 require "test_helper"
 
-class MarketHub::Utils::TestOAuth20 < Minitest::Test
+class MarketHub::TestOAuth20 < Minitest::Test
 
   def setup
     @client_id = '7241495617113935'
     @client_secret = '1b8JzDc6NPlUKOZimybInVM0BZ5QHDl1'
     @redirect_uri = 'https://app.exemple.com/oauth/redirect'
 
-    @oauth20 = MarketHub::Utils::OAuth20.new(@client_id, @client_secret, @redirect_uri)
+    @oauth20 = MarketHub::OAuth20.new(@client_id, @client_secret, @redirect_uri)
   end
 
   def test_if_authorize_url_returns_a_valid_url

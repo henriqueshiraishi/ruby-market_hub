@@ -17,7 +17,7 @@ module MarketHub
           endpoint = URI::HTTPS.build(host: host, path: path)
           endpoint.query = URI.encode_www_form(params)
 
-          response = Net::HTTP.get_response(endpoint)
+          response = MarketHub::HTTP.get(endpoint)
           JSON.parse(response.body)
         end
 
@@ -26,7 +26,7 @@ module MarketHub
           path = "/sites/#{site_id}/categories"
 
           endpoint = URI::HTTPS.build(host: host, path: path)
-          response = Net::HTTP.get_response(endpoint)
+          response = MarketHub::HTTP.get(endpoint)
           JSON.parse(response.body)
         end
 
@@ -35,7 +35,7 @@ module MarketHub
           path = "/categories/#{category_id}"
 
           endpoint = URI::HTTPS.build(host: host, path: path)
-          response = Net::HTTP.get_response(endpoint)
+          response = MarketHub::HTTP.get(endpoint)
           JSON.parse(response.body)
         end
 
@@ -44,7 +44,7 @@ module MarketHub
           path = "/categories/#{category_id}/attributes"
 
           endpoint = URI::HTTPS.build(host: host, path: path)
-          response = Net::HTTP.get_response(endpoint)
+          response = MarketHub::HTTP.get(endpoint)
           JSON.parse(response.body)
         end
   

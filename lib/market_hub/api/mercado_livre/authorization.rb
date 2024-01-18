@@ -9,7 +9,7 @@ module MarketHub
         def initialize( client_id = MarketHub.configure.client_id,
                         client_secret = MarketHub.configure.client_secret,
                         redirect_uri = MarketHub.configure.redirect_uri)
-          @oauth20 = MarketHub::Utils::OAuth20.new(client_id, client_secret, redirect_uri)
+          @oauth20 = MarketHub::OAuth20.new(client_id, client_secret, redirect_uri)
         end
 
         def authorize_url(state = nil)

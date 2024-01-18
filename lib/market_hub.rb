@@ -9,6 +9,7 @@ require 'market_hub/configuration'
 require 'market_hub/exception'
 require 'market_hub/version'
 
+require 'market_hub/utils/http'
 require 'market_hub/utils/o_auth_20'
 
 require 'market_hub/models/base'

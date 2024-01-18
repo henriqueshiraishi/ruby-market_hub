@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [0.9.0] - 2024-01-18
+
+- Add HTTP module to simplify HTTP requests
+- Change all files that were using Net::HTTP
+
 ## [0.8.0] - 2024-01-18
 
 - Add listing_types_availables, listing_types_downgrades, listing_types_upgrades and update in MercadoLivre::PublicationType
