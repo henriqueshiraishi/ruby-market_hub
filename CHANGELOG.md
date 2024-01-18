@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.7.0] - 2024-01-18
+
+- Add listing_types and listing_exposures methods in MercadoLivre::PublicationType
+
 ## [0.6.1] - 2024-01-18
 
 - Fix test_o_auth_20 file
