@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module MarketHub
-  # Classe base para todas as classes de integração
+  # Classe genérica para todas outras classes base da biblioteca
   class Base
 
     def initialize
