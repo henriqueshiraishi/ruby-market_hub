@@ -13,15 +13,15 @@ module MarketHub
         end
 
         def authorize_url(state = nil)
-          @oauth20.authorize_url('auth.mercadolivre.com.br', '/authorization', state)
+          @oauth20.authorize_url(MarketHub.configure.meli_auth_uri, '/authorization', state)
         end
 
         def get_token(code)
-          @oauth20.get_token('api.mercadolibre.com', '/oauth/token', code)
+          @oauth20.get_token(MarketHub.configure.meli_api_uri, '/oauth/token', code)
         end
 
         def renew_token(refresh_token)
-          @oauth20.renew_token('api.mercadolibre.com', '/oauth/token', refresh_token)
+          @oauth20.renew_token(MarketHub.configure.meli_api_uri, '/oauth/token', refresh_token)
         end
   
       end

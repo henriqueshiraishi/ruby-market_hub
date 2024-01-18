@@ -12,7 +12,7 @@ class MarketHub::Utils::TestOAuth20 < Minitest::Test
     @oauth20 = MarketHub::Utils::OAuth20.new(@client_id, @client_secret, @redirect_uri)
   end
 
-  def tests_if_authorize_url_returns_a_valid_url
+  def test_if_authorize_url_returns_a_valid_url
     site = 'auth.mercadolivre.com.br'
     path = '/authorization'
     state = 'ML-3484YHBWE84983W7Y42'
@@ -22,7 +22,7 @@ class MarketHub::Utils::TestOAuth20 < Minitest::Test
   end
 
   def test_if_get_token_returns_a_error
-    site = 'api.mercadolibre.com'
+    site = MarketHub.configure.meli_api_uri
     path = '/oauth/token'
     code = 'TG-65a03df7ac1a050001c3503a-1303777413'
     json = @oauth20.get_token(site, path, code)
@@ -33,7 +33,7 @@ class MarketHub::Utils::TestOAuth20 < Minitest::Test
   end
 
   def test_if_renew_token_returns_a_error
-    site = 'api.mercadolibre.com'
+    site = MarketHub.configure.meli_api_uri
     path = '/oauth/token'
     refresh_token = 'TG-65a03df7ac1a050001c3503a-1303777413'
     json = @oauth20.renew_token(site, path, refresh_token)

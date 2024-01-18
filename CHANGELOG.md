@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.5.0] - 2024-01-18
+
+- Add predict_category in MercadoLivre::Category
+
 ## [0.4.0] - 2024-01-18
 
 - Add MercadoLivre::Authorization with OAuth 2.0

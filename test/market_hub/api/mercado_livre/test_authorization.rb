@@ -12,7 +12,7 @@ class MarketHub::API::MercadoLivre::TestAuthorization < Minitest::Test
     @oauth20 = MarketHub::API::MercadoLivre::Authorization.new(@client_id, @client_secret, @redirect_uri)
   end
 
-  def tests_if_authorize_url_returns_a_valid_url
+  def test_if_authorize_url_returns_a_valid_url
     state = 'ML-3484YHBWE84983W7Y42'
     valid_url = @oauth20.authorize_url(state)
 
