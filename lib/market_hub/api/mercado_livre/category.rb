@@ -30,7 +30,7 @@ module MarketHub
           JSON.parse(response.body)
         end
 
-        def detail(category_id)
+        def find(category_id)
           host = MarketHub.configure.meli_api_uri
           path = "/categories/#{category_id}"
 
@@ -42,6 +42,15 @@ module MarketHub
         def attributes(category_id)
           host = MarketHub.configure.meli_api_uri
           path = "/categories/#{category_id}/attributes"
+
+          endpoint = URI::HTTPS.build(host: host, path: path)
+          response = MarketHub::HTTP.get(endpoint)
+          JSON.parse(response.body)
+        end
+
+        def sale_terms(category_id)
+          host = MarketHub.configure.meli_api_uri
+          path = "/categories/#{category_id}/sale_terms"
 
           endpoint = URI::HTTPS.build(host: host, path: path)
           response = MarketHub::HTTP.get(endpoint)

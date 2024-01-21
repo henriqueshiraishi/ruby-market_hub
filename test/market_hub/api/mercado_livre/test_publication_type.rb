@@ -5,8 +5,7 @@ require "test_helper"
 class MarketHub::API::MercadoLivre::TestPublicationType < Minitest::Test
 
   def setup
-    @access_token = 'APP_USR-7241495617113935-011819-634f068f854445be13c7ccd3eed8d290-1632856741'
-    @publication_type = MarketHub::API::MercadoLivre::PublicationType.new(@access_token)
+    @publication_type = MarketHub::API::MercadoLivre::PublicationType.new(@@meli_access_token)
   end
 
   def test_if_listing_types_returns_listing_types_list

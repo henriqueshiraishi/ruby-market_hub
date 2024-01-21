@@ -34,9 +34,9 @@ class MarketHub::API::MercadoLivre::TestCategory < Minitest::Test
     assert_equal(json.first['name'], 'Acessórios para Veículos')
   end
 
-  def test_if_detail_returns_category_detail
+  def test_if_find_returns_category_find
     category_id = 'MLB5672'
-    json = @category.detail(category_id)
+    json = @category.find(category_id)
 
     refute_nil(json)
     assert_equal(json.class, Hash)
@@ -57,6 +57,17 @@ class MarketHub::API::MercadoLivre::TestCategory < Minitest::Test
     assert_equal(json.first['value_type'], 'string')
     assert_equal(json.first['value_max_length'], 255)
     assert_equal(json.first['hint'], "Informe a marca verdadeira do produto ou 'Genérica' se não tiver marca.")
+  end
+
+  def test_if_sale_terms_returns_category_sale_terms
+    category_id = 'MLB5672'
+    json = @category.sale_terms(category_id)
+
+    refute_nil(json)
+    assert_equal(json.class, Array)
+    assert_equal(json.length, 30)
+    assert_equal(json.first['id'], 'INVOICE')
+    assert_equal(json.first['name'], 'Faturamento')
   end
 
 end

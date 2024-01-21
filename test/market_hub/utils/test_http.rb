@@ -6,7 +6,6 @@ class MarketHub::TestHTTP < Minitest::Test
 
   def setup
     @item_id = 'MLB2665998037'
-    @access_token = 'APP_USR-7241495617113935-011819-634f068f854445be13c7ccd3eed8d290-1632856741'
   end
 
   def test_if_post_with_all_arguments_works
@@ -14,7 +13,7 @@ class MarketHub::TestHTTP < Minitest::Test
     path = "/items/#{@item_id}/listing_type"
 
     endpoint = URI::HTTPS.build(host: host, path: path)
-    headers = { authorization: "Bearer #{@access_token}" }
+    headers = { authorization: "Bearer #{@@meli_access_token}" }
     body = { id: 'gold_special' }
     response = MarketHub::HTTP.post(endpoint, headers: headers, body: body)
     json = JSON.parse(response.body)
@@ -30,7 +29,7 @@ class MarketHub::TestHTTP < Minitest::Test
     path = "/items/#{@item_id}/available_listing_types"
 
     endpoint = URI::HTTPS.build(host: host, path: path)
-    headers = { Authorization: "Bearer #{@access_token}" }
+    headers = { Authorization: "Bearer #{@@meli_access_token}" }
     response = MarketHub::HTTP.get(endpoint, headers: headers)
     json = JSON.parse(response.body)
 

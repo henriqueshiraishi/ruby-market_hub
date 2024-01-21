@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [0.10.0] - 2024-01-21
+
+- Change tests with global token variables
+- Add sale_terms to MercadoLivre::Category
+- Add all, find, find_by_sku, create, update and destroy to MercadoLivre::Item
+- Add post_form and put to HTTP module
+- Change HTTP module to simplify code patters
+
 ## [0.9.0] - 2024-01-18
 
 - Add HTTP module to simplify HTTP requests
@@ -19,7 +27,7 @@
 
 ## [0.6.0] - 2024-01-18
 
-- Add site, detail and attributes methods in MercadoLivre::Category
+- Add site, find and attributes methods in MercadoLivre::Category
 
 ## [0.5.0] - 2024-01-18
 

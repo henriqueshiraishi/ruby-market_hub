@@ -25,7 +25,7 @@ module MarketHub
       endpoint = URI::HTTPS.build(host: site, path: path)
       body = {  grant_type: 'authorization_code', client_id: @client_id,
                 client_secret: @client_secret, code: code, redirect_uri: @redirect_uri }
-      response = MarketHub::HTTP.post(endpoint, body: body)
+      response = MarketHub::HTTP.post_form(endpoint, body: body)
       JSON.parse(response.body)
     end
 
@@ -33,7 +33,7 @@ module MarketHub
       endpoint = URI::HTTPS.build(host: site, path: path)
       body = {  grant_type: 'refresh_token', client_id: @client_id,
                 client_secret: @client_secret, refresh_token: refresh_token }
-      response = MarketHub::HTTP.post(endpoint, body: body)
+      response = MarketHub::HTTP.post_form(endpoint, body: body)
       JSON.parse(response.body)
     end
 
