@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.11.0] - 2024-01-21
+
+- Add find, create and update to MercadoLivre::Description
+
 ## [0.10.0] - 2024-01-21
 
 - Change tests with global token variables

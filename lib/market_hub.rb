@@ -22,6 +22,7 @@ require 'market_hub/api/mercado_livre/authorization'
 require 'market_hub/api/mercado_livre/category'
 require 'market_hub/api/mercado_livre/publication_type'
 require 'market_hub/api/mercado_livre/item'
+require 'market_hub/api/mercado_livre/description'
 
 require 'market_hub/client'
 
