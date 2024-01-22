@@ -9,6 +9,7 @@ module MarketHub
     attr_accessor :redirect_uri
     attr_accessor :meli_auth_uri
     attr_accessor :meli_api_uri
+    attr_accessor :currency_id
 
     def initialize
       @client_id = nil
@@ -16,6 +17,7 @@ module MarketHub
       @redirect_uri = nil
       @meli_auth_uri = 'auth.mercadolivre.com.br'
       @meli_api_uri = 'api.mercadolibre.com'
+      @currency_id = 'BRL'
     end
 
     def self.default

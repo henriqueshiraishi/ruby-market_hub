@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.12.2] - 2024-01-22
+
+- Add currency_id in MarketHub::Configuration
+
 ## [0.12.1] - 2024-01-22
 
 - Add layout Meli Item and change Meli Token Test
