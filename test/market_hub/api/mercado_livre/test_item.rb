@@ -51,7 +51,8 @@ class MarketHub::API::MercadoLivre::TestItem < Minitest::Test
       listing_type_id: "free",
       sale_terms: [
         { id: "WARRANTY_TYPE", value_name: "Garantia do vendedor" },
-        { id: "WARRANTY_TIME", value_name: "90 dias" }
+        { id: "WARRANTY_TIME", value_name: "90 dias" },
+        { id: "MANUFACTURING_TIME", value_name: "20 dias" }
      ],
       pictures: [
         { source: "http://mla-s2-p.mlstatic.com/968521-MLA20805195516_072016-O.jpg" }

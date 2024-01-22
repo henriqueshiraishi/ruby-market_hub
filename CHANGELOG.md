@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.12.1] - 2024-01-22
+
+- Add layout Meli Item and change Meli Token Test
+
 ## [0.12.0] - 2024-01-22
 
 - Add upload, add and change to MercadoLivre::Image
