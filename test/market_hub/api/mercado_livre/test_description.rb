@@ -9,7 +9,7 @@ class MarketHub::API::MercadoLivre::TestDescription < Minitest::Test
   end
 
   def test_if_find_returns_description_detail
-    item_id = 'MLB4386441778'
+    item_id = @@meli_item_id
     json = @description.find(item_id)
 
     refute_nil(json)
@@ -18,7 +18,7 @@ class MarketHub::API::MercadoLivre::TestDescription < Minitest::Test
   end
   
   def test_if_create_returns_success
-    item_id = 'MLB4386441778'
+    item_id = @@meli_item_id
     description = 'DESCRIÇÃO DE TESTE! POR FAVOR, IGNORE ESSE TEXTO!'
     json = @description.create(item_id, description)
 
@@ -29,7 +29,7 @@ class MarketHub::API::MercadoLivre::TestDescription < Minitest::Test
   end
 
   def test_if_update_returns_success
-    item_id = 'MLB4386441778'
+    item_id = @@meli_item_id
     description = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus fugiat ab, necessitatibus perferendis cupiditate, incidunt omnis distinctio accusamus doloribus quis aut, optio inventore cum facere sed. Consectetur tempora quia eligendi?'
     json = @description.update(item_id, description)
 

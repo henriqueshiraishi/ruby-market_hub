@@ -14,9 +14,10 @@ module MarketHub
       MarketHub::HTTP.execute(uri, request, headers, body)
     end
 
-    def self.post_form(uri, headers: {}, body: {})
+    def self.post_form(uri, headers: {}, body: {}, files: nil)
       request = Net::HTTP::Post.new(uri)
-      MarketHub::HTTP.execute(uri, request, headers, body, :form_data)
+      type = :form_data
+      MarketHub::HTTP.execute(uri, request, headers, body, type, files)
     end
 
     def self.put(uri, headers: {}, body: {})
@@ -24,15 +25,20 @@ module MarketHub
       MarketHub::HTTP.execute(uri, request, headers, body)
     end
 
-    def self.execute(uri, request, headers, body = nil, type = :raw_data)
+    def self.put_form(uri, headers: {}, body: {}, files: nil)
+      request = Net::HTTP::Put.new(uri)
+      type = :form_data
+      MarketHub::HTTP.execute(uri, request, headers, body, type, files)
+    end
+
+    def self.execute(uri, request, headers, body = nil, type = :raw_data, files = nil)
       Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
-        if body
-          case type
-          when :raw_data
-            request.body = body.to_json
-          when :form_data
-            request.form_data = body
-          end
+        case type
+        when :raw_data
+          request.body = body.to_json if body
+        when :form_data
+          request.form_data = body if body
+          request.set_form(files.map { |file| ['file', file, { filename: File.basename(file) }] }, 'multipart/form-data') if files
         end
 
         headers.each { |header, value| request[header] = value } if headers

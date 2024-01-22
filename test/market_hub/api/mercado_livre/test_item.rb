@@ -36,7 +36,7 @@ class MarketHub::API::MercadoLivre::TestItem < Minitest::Test
 
     refute_nil(json)
     assert_equal(json.class, Array)
-    assert_equal(json.first['id'], 'MLB4386441778')
+    assert_equal(json.first['id'], @@meli_item_id)
   end
 
   def test_if_create_returns_success
@@ -48,7 +48,7 @@ class MarketHub::API::MercadoLivre::TestItem < Minitest::Test
       available_quantity: 1,
       buying_mode: "buy_it_now",
       condition: "new",
-      listing_type_id: "gold_pro",
+      listing_type_id: "free",
       sale_terms: [
         { id: "WARRANTY_TYPE", value_name: "Garantia do vendedor" },
         { id: "WARRANTY_TIME", value_name: "90 dias" }
@@ -71,19 +71,19 @@ class MarketHub::API::MercadoLivre::TestItem < Minitest::Test
   end
 
   def test_if_update_returns_success
-    item_id = 'MLB4386441778'
+    item_id = @@meli_item_id
     body = {
       price: 192,
-      available_quantity: 422,
+      available_quantity: 1,
       channels: ["marketplace", "mshops"]
     }
 
     json = @item.update(item_id, body)
 
     refute_nil(json)
-    assert_equal(json['id'], 'MLB4386441778')
+    assert_equal(json['id'], @@meli_item_id)
     assert_equal(json['price'], 192)
-    assert_equal(json['available_quantity'], 422)
+    assert_equal(json['available_quantity'], 1)
     assert_equal(json['channels'], ["marketplace", "mshops"])
   end
 

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [0.12.0] - 2024-01-22
+
+- Add upload, add and change to MercadoLivre::Image
+- Change HTTP module to support file upload
+
 ## [0.11.0] - 2024-01-21
 
 - Add find, create and update to MercadoLivre::Description
