@@ -3,23 +3,22 @@
   "category_id": "MLB3530",
   "price": 350,
   "currency_id": "BRL",
-  "available_quantity": 1,
+  "available_quantity": 10,
   "sale_terms": [
     { "id": "WARRANTY_TYPE", "value_name": "Garantia do vendedor" },
     { "id": "WARRANTY_TIME", "value_name": "90 dias" },
     { "id": "MANUFACTURING_TIME", "value_name": "20 dias" }
   ],
   "buying_mode": "buy_it_now",
-  "listing_type_id": "free",
+  "listing_type_id": "gold_pro",
   "condition": "new",
   "pictures": [
-    { "id": "836334-MLB74037091612_012024" },
-    { "id": "900849-MLB74047943292_012024" }
+    { "id": "836334-MLB74037091612_012024" }
   ],
   "video_id": "a3ICNMQW7Ok",
   "shipping": {
-    "mode": "not_specified",
-    "methods": []
+    "local_pick_up": false,
+    "free_shipping": false
   },
   "attributes": [
     { "id": "GTIN", "value_name": "7898945080293" },

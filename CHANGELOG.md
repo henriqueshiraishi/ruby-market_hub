@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [0.13.0] - 2024-01-23
+
+- Add me and currency to MercadoLivre::User
+- Fix destroy method in MercadoLivre::Item
+
 ## [0.12.2] - 2024-01-22
 
 - Add currency_id in MarketHub::Configuration

@@ -58,7 +58,8 @@ module MarketHub
         end
 
         def destroy(item_id)
-          update(item_id, { status: "closed", deleted: true })
+          update(item_id, { status: "closed" })
+          update(item_id, { deleted: true })
         end
   
       end
