@@ -1,7 +1,7 @@
 {
   "title": "Item de Teste - Por favor, NÃO OFERTAR!",
-  "category_id": "MLB3530",
-  "price": 350,
+  "category_id": "MLB270558",
+  "price": 99999,
   "currency_id": "BRL",
   "available_quantity": 10,
   "sale_terms": [
@@ -21,11 +21,14 @@
     "free_shipping": false
   },
   "attributes": [
-    { "id": "GTIN", "value_name": "7898945080293" },
-    { "id": "SELLER_SKU", "value_name": "1234567" }
+    { "id": "GTIN", "value_name": "7892642360580" },
+    { "id": "SELLER_SKU", "value_name": "1234567" },
+    { "id": "BRAND", "value_name": "Genérica" },
+    { "id": "MODEL", "value_name": "Genérica" }
   ],
   "variations": [],
   "status": "active",
-  "catalog_product_id": null,
+  "catalog_product_id": "MLB23546296",
+  "catalog_listing": true,
   "channels": ["marketplace", "mshops"]
 }

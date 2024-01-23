@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.14.0] - 2024-01-23
+
+- Add all, find and optin to MercadoLivre::Catalog
+
 ## [0.13.0] - 2024-01-23
 
 - Add me and currency to MercadoLivre::User
