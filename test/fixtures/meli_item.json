@@ -26,7 +26,22 @@
     { "id": "BRAND", "value_name": "Genérica" },
     { "id": "MODEL", "value_name": "Genérica" }
   ],
-  "variations": [],
+  "variations": [
+    {
+      "attribute_combinations": [
+        { "id": "COLOR", "value_name": "Preto" },
+        { "id": "SIZE", "value_name": "M" }
+      ],
+      "price": 99999,
+      "available_quantity": 10,
+      "picture_ids": [ "836334-MLB74037091612_012024" ],
+      "catalog_product_id": "MLB23546296",
+      "attributes": [
+        { "id": "GTIN", "value_name": "7892642360580" },
+        { "id": "SELLER_SKU", "value_name": "1234567-1" }
+      ]
+    }
+  ],
   "status": "active",
   "catalog_product_id": "MLB23546296",
   "catalog_listing": true,

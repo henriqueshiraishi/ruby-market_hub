@@ -31,6 +31,11 @@ module MarketHub
       MarketHub::HTTP.execute(uri, request, headers, body, type, files)
     end
 
+    def self.delete(uri, headers: {})
+      request = Net::HTTP::Delete.new(uri)
+      MarketHub::HTTP.execute(uri, request, headers)
+    end
+
     def self.execute(uri, request, headers = nil, body = nil, type = :raw_data, files = nil)
       Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
         case type

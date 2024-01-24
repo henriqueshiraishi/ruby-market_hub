@@ -26,6 +26,7 @@ require 'market_hub/api/mercado_livre/description'
 require 'market_hub/api/mercado_livre/image'
 require 'market_hub/api/mercado_livre/user'
 require 'market_hub/api/mercado_livre/catalog'
+require 'market_hub/api/mercado_livre/variation'
 
 require 'market_hub/client'
 

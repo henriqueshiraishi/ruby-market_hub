@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [0.15.0] - 2024-01-24
+
+- Add all, find, create, update and destroy to MercadoLivre::Variation
+- Add delete verb to HTTP module
+
 ## [0.14.1] - 2024-01-24
 
 - Remove excess space
