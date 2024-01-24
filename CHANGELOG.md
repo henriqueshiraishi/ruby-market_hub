@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.16.0] - 2024-01-25
+
+- Add metrics, all, find, anwser and destroy to MercadoLivre::QuestionAnswer
+
 ## [0.15.0] - 2024-01-24
 
 - Add all, find, create, update and destroy to MercadoLivre::Variation
