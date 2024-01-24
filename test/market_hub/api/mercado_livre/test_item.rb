@@ -31,7 +31,7 @@ class MarketHub::API::MercadoLivre::TestItem < Minitest::Test
   end
 
   def test_if_find_by_sku_returns_a_array_list
-    seller_sku = '1234567'
+    seller_sku = '1234567-MINITEST'
     json = @item.find_by_sku(seller_sku)
 
     refute_nil(json)

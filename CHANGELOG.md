@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.14.1] - 2024-01-24
+
+- Remove excess space
+- Add optional header argument in the HTTP module
+- Change attributes in MarketHub::Configuration
+
 ## [0.14.0] - 2024-01-23
 
 - Add all, find and optin to MercadoLivre::Catalog

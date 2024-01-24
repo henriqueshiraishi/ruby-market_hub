@@ -6,9 +6,9 @@ module MarketHub
       # Classe para integrar/autenticar com o Mercado Livre
       class Authorization
 
-        def initialize( client_id = MarketHub.configure.client_id,
-                        client_secret = MarketHub.configure.client_secret,
-                        redirect_uri = MarketHub.configure.redirect_uri)
+        def initialize( client_id = MarketHub.configure.meli_client_id,
+                        client_secret = MarketHub.configure.meli_client_secret,
+                        redirect_uri = MarketHub.configure.meli_redirect_uri)
           @oauth20 = MarketHub::OAuth20.new(client_id, client_secret, redirect_uri)
         end
 

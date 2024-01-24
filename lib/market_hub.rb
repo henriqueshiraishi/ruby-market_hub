@@ -32,8 +32,8 @@ require 'market_hub/client'
 module MarketHub
   # Personalize as configurações padrão da biblioteca usando bloco
   #   MarketHub.configure do |config|
-  #     config.client_id = "xxx"
-  #     config.client_secret = "xxx"
+  #     config.meli_client_id = "xxx"
+  #     config.meli_client_secret = "xxx"
   #   end
   # Se nenhum bloco for fornecido, retorna o objeto de configuração padrão
   def self.configure

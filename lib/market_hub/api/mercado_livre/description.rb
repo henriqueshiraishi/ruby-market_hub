@@ -15,7 +15,6 @@ module MarketHub
         def find(item_id)
           host = MarketHub.configure.meli_api_uri
           path = "/items/#{item_id}/description"
-
           endpoint = URI::HTTPS.build(host: host, path: path)
           response = MarketHub::HTTP.get(endpoint, headers: { authorization: "Bearer #{@access_token}" })
           JSON.parse(response.body)
@@ -25,7 +24,6 @@ module MarketHub
           host = MarketHub.configure.meli_api_uri
           path = "/items/#{item_id}/description"
           body = { plain_text: description }
-
           endpoint = URI::HTTPS.build(host: host, path: path)
           response = MarketHub::HTTP.post(endpoint, headers: { authorization: "Bearer #{@access_token}" }, body: body)
           JSON.parse(response.body)
@@ -35,7 +33,6 @@ module MarketHub
           host = MarketHub.configure.meli_api_uri
           path = "/items/#{item_id}/description"
           body = { plain_text: description }
-
           endpoint = URI::HTTPS.build(host: host, path: path)
           response = MarketHub::HTTP.put(endpoint, headers: { authorization: "Bearer #{@access_token}" }, body: body)
           JSON.parse(response.body)
