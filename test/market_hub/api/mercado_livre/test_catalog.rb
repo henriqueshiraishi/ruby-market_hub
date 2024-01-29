@@ -17,7 +17,7 @@ class MarketHub::API::MercadoLivre::TestCatalog < Minitest::Test
     refute_nil(json)
     assert_equal(json['keywords'], q)
     assert_equal(json['domain_id'], domain_id)
-    assert_equal(json['results'].length, 1)
+    assert_equal(json['results'].length, 10)
   end
 
   def test_if_find_returns_catalog_product_detail

@@ -10,17 +10,17 @@ class MarketHub::API::MercadoLivre::TestCategory < Minitest::Test
 
   def test_if_predict_returns_a_categories_list
     site_id = 'MLB'
-    q = 'ÁGUA'
+    q = 'ÁGUA TÔNICA'
     options = { limit: 3 }
     json = @category.predict(site_id, q, options)
 
     refute_nil(json)
     assert_equal(json.class, Array)
-    assert_equal(json.length, 3)
-    assert_equal(json.first['domain_id'], 'MLB-READY_TO_DRINK_COCKTAILS')
-    assert_equal(json.first['domain_name'], 'Bebidas alcoólicas prontas para beber')
-    assert_equal(json.first['category_id'], 'MLB277634')
-    assert_equal(json.first['category_name'], 'Bebidas Alcoólicas Mistas')
+    assert_equal(json.length, 1)
+    assert_equal(json.first['domain_id'], 'MLB-TONIC_WATERS')
+    assert_equal(json.first['domain_name'], 'Águas tônicas')
+    assert_equal(json.first['category_id'], 'MLB278246')
+    assert_equal(json.first['category_name'], 'Águas Tônicas')
   end
 
   def test_if_site_returns_a_categories_list

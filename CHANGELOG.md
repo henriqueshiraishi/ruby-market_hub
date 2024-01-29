@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [0.17.0] - 2024-01-29
+
+- Change attributes method with new tag argument
+- Add validation and Error class to Models
+- Add news methods to MercadoLivre::Client
+- Add base code to Base class (API and Model)
+
 ## [0.16.0] - 2024-01-25
 
 - Add metrics, all, find, anwser and destroy to MercadoLivre::QuestionAnswer

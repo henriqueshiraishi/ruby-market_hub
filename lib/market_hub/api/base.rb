@@ -8,6 +8,18 @@ module MarketHub
       def initialize
       end
 
+      def connected?
+        raise MarketHub::NotImplemented, 'Sobreescreva este método na classe referente ao marketplace que você esta criando'
+      end
+
+      def find(id)
+        raise MarketHub::NotImplemented, 'Sobreescreva este método na classe referente ao marketplace que você esta criando'
+      end
+
+      def quantity(id, available_quantity)
+        raise MarketHub::NotImplemented, 'Sobreescreva este método na classe referente ao marketplace que você esta criando'
+      end
+
     end
   end
 end

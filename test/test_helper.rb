@@ -28,4 +28,4 @@ require "minitest/autorun"
 # Configure valid tokens so that the tests can be carried out successfully.
 @@meli_user_id = '1632856741'
 @@meli_item_id = 'MLB4389178328'
-@@meli_access_token = 'APP_USR-7241495617113935-012422-332d14c630d2c22aff434d2fec08e963-1632856741'
+@@meli_access_token = 'APP_USR-7241495617113935-012910-52c27353009e5832555e0a22ad666a7d-1632856741'

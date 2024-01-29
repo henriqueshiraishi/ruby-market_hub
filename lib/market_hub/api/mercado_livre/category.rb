@@ -35,12 +35,23 @@ module MarketHub
           JSON.parse(response.body)
         end
 
-        def attributes(category_id)
+        # Principais tags existentes: required, catalog_required, allow_variations e variation_attribute
+        # @category.attributes('MLB40411') => Retorna todos os atributos
+        # @category.attributes('MLB40411', { required: true }) => Retorna todos os atributos primários obrigatórios
+        # @category.attributes('MLB40411', { allow_variations: true }) => Retorna todos os atributos primários obrigatórios
+        # @category.attributes('MLB40411', { variation_attribute: true }) => Retorna todos os atributos secundários de variação
+        def attributes(category_id, tags = {})
           host = MarketHub.configure.meli_api_uri
           path = "/categories/#{category_id}/attributes"
           endpoint = URI::HTTPS.build(host: host, path: path)
           response = MarketHub::HTTP.get(endpoint)
-          JSON.parse(response.body)
+          json = JSON.parse(response.body)
+          if json.is_a?(Array)
+            tags.each do |tag, value|
+              json = json.select { |attribute| attribute['tags'][tag.to_s] == value }
+            end
+          end
+          json
         end
 
         def sale_terms(category_id)

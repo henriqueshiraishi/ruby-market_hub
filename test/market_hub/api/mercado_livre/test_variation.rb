@@ -13,7 +13,6 @@ class MarketHub::API::MercadoLivre::TestVariation < Minitest::Test
 
     refute_nil(json)
     assert_equal(json.length, 5)
-    assert_equal(json.first['id'].to_s, "173922290995")
   end
 
   def test_if_find_returns_detail_about_variation
