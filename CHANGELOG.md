@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.18.0] - 2024-01-29
+
+- Add all, recent, find and notes to MercadoLivre::Order
+
 ## [0.17.0] - 2024-01-29
 
 - Change attributes method with new tag argument
