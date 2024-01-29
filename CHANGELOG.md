@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [0.19.0] - 2024-01-29
+
+- Add find and labels to MercadoLivre::Shipment
+- Add order and shipment objects to MercadoLivre::Client
+
 ## [0.18.0] - 2024-01-29
 
 - Add all, recent, find and notes to MercadoLivre::Order

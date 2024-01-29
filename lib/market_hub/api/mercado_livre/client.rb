@@ -14,8 +14,10 @@ module MarketHub
         attr_reader :description
         attr_reader :image
         attr_reader :item
+        attr_reader :order
         attr_reader :publication_type
         attr_reader :question_answer
+        attr_reader :shipment
   
         def initialize(access_token)
           @user = MarketHub::API::MercadoLivre::User.new(access_token)
@@ -28,8 +30,10 @@ module MarketHub
             @description = MarketHub::API::MercadoLivre::Description.new(access_token)
             @image = MarketHub::API::MercadoLivre::Image.new(access_token)
             @item = MarketHub::API::MercadoLivre::Item.new(access_token, @me['id'])
+            @order = MarketHub::API::MercadoLivre::Order.new(access_token, @me['id'])
             @publication_type = MarketHub::API::MercadoLivre::PublicationType.new(access_token)
             @question_answer = MarketHub::API::MercadoLivre::QuestionAnswer.new(access_token, @me['id'])
+            @shipment = MarketHub::API::MercadoLivre::Shipment.new(access_token)
           end
         end
 
