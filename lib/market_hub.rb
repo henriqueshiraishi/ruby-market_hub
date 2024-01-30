@@ -31,6 +31,7 @@ require 'market_hub/api/mercado_livre/variation'
 require 'market_hub/api/mercado_livre/question_answer'
 require 'market_hub/api/mercado_livre/order'
 require 'market_hub/api/mercado_livre/shipment'
+require 'market_hub/api/mercado_livre/invoice'
 
 require 'market_hub/client'
 

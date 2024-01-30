@@ -40,7 +40,7 @@ module MarketHub
       Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
         case type
         when :raw_data
-          request.body = body.to_json if body
+          request.body = (body.is_a?(Hash) ? body.to_json : body) if body
         when :form_data
           request.form_data = body if body
           request.set_form(files.map { |file| ['file', file, { filename: File.basename(file) }] }, 'multipart/form-data') if files

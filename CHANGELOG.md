@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [0.20.0] - 2024-01-30
+
+- Add find, create, update and errors to MercadoLivre::Invoice
+- Add billing_info type to MercadoLivre::Shipment
+- Add invoice objects to MercadoLivre::Client
+- Fix content type application/xml in HTTP module
+
 ## [0.19.0] - 2024-01-29
 
 - Add find and labels to MercadoLivre::Shipment

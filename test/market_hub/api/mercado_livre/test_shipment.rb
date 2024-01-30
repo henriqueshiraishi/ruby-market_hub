@@ -45,4 +45,23 @@ class MarketHub::API::MercadoLivre::TestShipment < Minitest::Test
     refute_nil(file)
   end
 
+  def test_if_find_with_type_billing_info_return_about_receiver_and_sender
+    json = @shipment.find(@@meli_shipment_id, 'billing_info')
+
+    refute_nil(json)
+    assert_equal(json['receiver'].class, Hash)
+    assert_equal(json['receiver']['id'], 1634844864)
+    assert_equal(json['receiver']['document']['id'], 'CPF')
+    assert_equal(json['receiver']['document']['value'], '22434506070')
+    assert_equal(json['receiver']['city_ibge'], '3550308')
+    assert_equal(json['receiver']['name'], 'Test Test')
+    assert_equal(json['senders'].class, Array)
+    assert_equal(json['senders'].length, 1)
+    assert_equal(json['senders'].first['id'], @@meli_user_id.to_i)
+    assert_equal(json['senders'].first['document']['id'], 'CPF')
+    assert_equal(json['senders'].first['document']['value'], '11111111111')
+    assert_equal(json['senders'].first['city_ibge'], '3550308')
+    assert_equal(json['senders'].first['name'], 'Test Test')
+  end
+
 end

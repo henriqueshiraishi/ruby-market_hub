@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class MarketHub::API::MercadoLivre::TesOrder < Minitest::Test
+class MarketHub::API::MercadoLivre::TestOrder < Minitest::Test
 
   def setup
     @order = MarketHub::API::MercadoLivre::Order.new(@@meli_access_token, @@meli_user_id)

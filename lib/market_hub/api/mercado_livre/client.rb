@@ -13,6 +13,7 @@ module MarketHub
         attr_reader :category
         attr_reader :description
         attr_reader :image
+        attr_reader :invoice
         attr_reader :item
         attr_reader :order
         attr_reader :publication_type
@@ -29,6 +30,7 @@ module MarketHub
             @category = MarketHub::API::MercadoLivre::Category.new
             @description = MarketHub::API::MercadoLivre::Description.new(access_token)
             @image = MarketHub::API::MercadoLivre::Image.new(access_token)
+            @invoice = MarketHub::API::MercadoLivre::Invoice.new(access_token, @me['site_id'])
             @item = MarketHub::API::MercadoLivre::Item.new(access_token, @me['id'])
             @order = MarketHub::API::MercadoLivre::Order.new(access_token, @me['id'])
             @publication_type = MarketHub::API::MercadoLivre::PublicationType.new(access_token)
