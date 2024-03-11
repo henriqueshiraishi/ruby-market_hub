@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.21.0] - 2024-03-11
+
+- Add billing_info method in oder module
+
 ## [0.20.0] - 2024-01-30
 
 - Add find, create, update and errors to MercadoLivre::Invoice

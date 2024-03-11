@@ -54,6 +54,14 @@ module MarketHub
           JSON.parse(response.body)
         end
 
+        def billing_info(order_id)
+          host = MarketHub.configure.meli_api_uri
+          path = "/orders/#{order_id}/billing_info"
+          endpoint = URI::HTTPS.build(host: host, path: path)
+          response = MarketHub::HTTP.get(endpoint, headers: { authorization: "Bearer #{@access_token}" })
+          JSON.parse(response.body)
+        end
+
       end
     end
   end

@@ -24,8 +24,8 @@ class MarketHub::API::MercadoLivre::TestInvoice < Minitest::Test
 
     refute_nil(json)
     assert_equal(json['status'], 400)
-    assert_equal(json['message'], 'NFe date must be greater than the sale date.')
-    assert_equal(json['error'], 'wrong_invoice_date')
+    assert_equal(json['message'], "Shipment 43054715141's status is wrong")
+    assert_equal(json['error'], 'invalid_shipment')
   end
 
   def test_if_update_return_unexpected_error

@@ -51,7 +51,7 @@ class MarketHub::API::MercadoLivre::TestCategory < Minitest::Test
 
     refute_nil(json)
     assert_equal(json.class, Array)
-    assert_equal(json.length, 26)
+    assert_equal(json.length, 27)
     assert_equal(json.first['id'], 'BRAND')
     assert_equal(json.first['name'], 'Marca')
     assert_equal(json.first['value_type'], 'string')

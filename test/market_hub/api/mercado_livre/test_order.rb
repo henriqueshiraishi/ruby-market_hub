@@ -47,4 +47,13 @@ class MarketHub::API::MercadoLivre::TestOrder < Minitest::Test
     assert_equal(json.first['results'].first['note'], "COMENTÁRIO DE TESTE COMENTÁRIO DE TESTE")
   end
 
+  def test_if_billing_info_return_a_address_from_order
+    json = @order.billing_info(@@meli_order_id)
+
+    refute_nil(json)
+    assert_equal(json['billing_info']['doc_type'], "CPF")
+    assert_equal(json['billing_info']['doc_number'], "22434506070")
+    assert_equal(json['billing_info']['additional_info'].class, Array)
+  end
+
 end
