@@ -35,6 +35,14 @@ module MarketHub
           JSON.parse(response.body)
         end
 
+        def domain(domain_id)
+          host = MarketHub.configure.meli_api_uri
+          path = "/catalog_domains/#{domain_id}"
+          endpoint = URI::HTTPS.build(host: host, path: path)
+          response = MarketHub::HTTP.get(endpoint)
+          JSON.parse(response.body)
+        end
+
         # Principais tags existentes: required, catalog_required, allow_variations e variation_attribute
         # @category.attributes('MLB40411') => Retorna todos os atributos
         # @category.attributes('MLB40411', { required: true }) => Retorna todos os atributos primários obrigatórios

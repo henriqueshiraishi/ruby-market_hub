@@ -45,6 +45,16 @@ class MarketHub::API::MercadoLivre::TestCategory < Minitest::Test
     assert_equal(json['date_created'], '2018-04-25T08:12:56.000Z')
   end
 
+  def test_if_domain_return_domain_detail
+    domain_id = 'MLB-LIGHT_VEHICLE_ACCESSORIES'
+    json = @category.domain(domain_id)
+
+    refute_nil(json)
+    assert_equal(json.class, Hash)
+    assert_equal(json['id'], 'MLB-LIGHT_VEHICLE_ACCESSORIES')
+    assert_equal(json['name'], 'Acessórios para linha leviana')
+  end
+
   def test_if_attributes_returns_category_attributes
     category_id = 'MLB5672'
     json = @category.attributes(category_id)

@@ -1,8 +1,12 @@
 # CHANGELOG
 
+## [0.22.0] - 2024-03-12
+
+- Add domain method in category module
+
 ## [0.21.0] - 2024-03-11
 
-- Add billing_info method in oder module
+- Add billing_info method in order module
 
 ## [0.20.0] - 2024-01-30
 
