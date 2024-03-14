@@ -7,7 +7,7 @@ module MarketHub
       class Item < MarketHub::Models::Base
 
         attr_accessor :item_id, :title, :description, :category_id, :price, :available_quantity, :sale_terms, :listing_type_id, :condition, :pictures,
-                      :video_id, :local_pick_up, :free_shipping, :attributes, :status, :catalog_product_id, :channels_markeplace, :channels_mshops
+                      :video_id, :local_pick_up, :free_shipping, :attributes, :status, :catalog_product_id, :channel_markeplace, :channel_mshops
 
         validates_presence_of :title, :category_id, :price, :available_quantity, :listing_type_id, :attributes, message: 'não pode estar em branco.'
 
@@ -31,8 +31,8 @@ module MarketHub
             @attributes = body.dig(:attributes) || body.dig('attributes')
             @status = body.dig(:status) || body.dig('status')
             @catalog_product_id = body.dig(:catalog_product_id) || body.dig('catalog_product_id')
-            @channels_markeplace = body.dig(:channels_markeplace) || (body.dig('channels').include?("marketplace") if body.dig('channels'))
-            @channels_mshops = body.dig(:channels_mshops) || (body.dig('channels').include?("mshops") if body.dig('channels'))
+            @channel_markeplace = body.dig(:channel_markeplace) || (body.dig('channels').include?("marketplace") if body.dig('channels'))
+            @channel_mshops = body.dig(:channel_mshops) || (body.dig('channels').include?("mshops") if body.dig('channels'))
           end
         end
 
@@ -111,8 +111,8 @@ module MarketHub
             layout[:catalog_product_id] = @catalog_product_id
             layout[:catalog_listing] = !(@catalog_product_id.to_s == "")
             layout[:channels] = []
-            layout[:channels].push("marketplace") if @channels_markeplace
-            layout[:channels].push("mshops") if @channels_mshops
+            layout[:channels].push("marketplace") if @channel_markeplace
+            layout[:channels].push("mshops") if @channel_mshops
             layout
           end
 

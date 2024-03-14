@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.23.1] - 2024-03-14
+
+- Fix nomenclature in Item Model (MercadoLivre)
+
 ## [0.23.0] - 2024-03-14
 
 - Add Item Model to MercadoLivre
