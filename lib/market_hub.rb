@@ -16,6 +16,7 @@ require 'market_hub/utils/validation'
 
 require 'market_hub/models/base'
 require 'market_hub/models/mercado_livre/item'
+require 'market_hub/models/mercado_livre/variation'
 
 require 'market_hub/api/base'
 require 'market_hub/api/mercado_livre/client'

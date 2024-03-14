@@ -5,11 +5,12 @@ require "test_helper"
 class MarketHub::API::MercadoLivre::TestVariation < Minitest::Test
 
   def setup
-    @variation = MarketHub::API::MercadoLivre::Variation.new(@@meli_access_token, 'MLB2089509261')
+    @variation = MarketHub::API::MercadoLivre::Variation.new(@@meli_access_token)
+    @item_id = 'MLB2089509261'
   end
 
   def test_if_all_returns_a_variation_list_from_item
-    json = @variation.all
+    json = @variation.all(@item_id)
 
     refute_nil(json)
     assert_equal(json.length, 5)
@@ -17,7 +18,7 @@ class MarketHub::API::MercadoLivre::TestVariation < Minitest::Test
 
   def test_if_find_returns_detail_about_variation
     variation_id = '173922290996'
-    json = @variation.find(variation_id)
+    json = @variation.find(@item_id, variation_id)
 
     refute_nil(json)
     assert_equal(json['id'].to_s, variation_id)
@@ -39,7 +40,7 @@ class MarketHub::API::MercadoLivre::TestVariation < Minitest::Test
         { id: "SELLER_SKU", value_name: "1234567-1" }
       ]
     }
-    json = @variation.create(body)
+    json = @variation.create(@item_id, body)
 
     refute_nil(json)
     assert_equal(json['status'], 403)
@@ -50,7 +51,7 @@ class MarketHub::API::MercadoLivre::TestVariation < Minitest::Test
   def test_if_update_variation_returns_forbidden
     variation_id = '173922290996'
     body = { price: 200 }
-    json = @variation.update(variation_id, body)
+    json = @variation.update(@item_id, variation_id, body)
 
     refute_nil(json)
     assert_equal(json['status'], 403)
@@ -60,7 +61,7 @@ class MarketHub::API::MercadoLivre::TestVariation < Minitest::Test
 
   def test_if_destroy_variation_returns_forbidden
     variation_id = '173922290996'
-    json = @variation.destroy(variation_id)
+    json = @variation.destroy(@item_id, variation_id)
 
     refute_nil(json)
     assert_equal(json['status'], 403)

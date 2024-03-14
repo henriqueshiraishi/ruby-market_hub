@@ -7,16 +7,14 @@ module MarketHub
       class Variation
 
         attr_accessor :access_token
-        attr_accessor :item_id
   
-        def initialize(access_token, item_id)
+        def initialize(access_token)
           @access_token = access_token
-          @item_id = item_id
         end
 
-        def all(params = {})
+        def all(item_id, params = {})
           host = MarketHub.configure.meli_api_uri
-          path = "/items/#{@item_id}/variations/"
+          path = "/items/#{item_id}/variations/"
           if params[:variation_id]
             path = path + params[:variation_id]
             params.delete(:variation_id)
@@ -27,29 +25,29 @@ module MarketHub
           JSON.parse(response.body)
         end
 
-        def find(variation_id)
-          all({ variation_id: variation_id })
+        def find(item_id, variation_id)
+          all(item_id, { variation_id: variation_id })
         end
 
-        def create(body)
+        def create(item_id, body)
           host = MarketHub.configure.meli_api_uri
-          path = "/items/#{@item_id}/variations"
+          path = "/items/#{item_id}/variations"
           endpoint = URI::HTTPS.build(host: host, path: path)
           response = MarketHub::HTTP.post(endpoint, headers: { authorization: "Bearer #{@access_token}" }, body: body)
           JSON.parse(response.body)
         end
 
-        def update(variation_id, body)
+        def update(item_id, variation_id, body)
           host = MarketHub.configure.meli_api_uri
-          path = "/items/#{@item_id}/variations/#{variation_id}"
+          path = "/items/#{item_id}/variations/#{variation_id}"
           endpoint = URI::HTTPS.build(host: host, path: path)
           response = MarketHub::HTTP.put(endpoint, headers: { authorization: "Bearer #{@access_token}" }, body: body)
           JSON.parse(response.body)
         end
 
-        def destroy(variation_id)
+        def destroy(item_id, variation_id)
           host = MarketHub.configure.meli_api_uri
-          path = "/items/#{@item_id}/variations/#{variation_id}"
+          path = "/items/#{item_id}/variations/#{variation_id}"
           endpoint = URI::HTTPS.build(host: host, path: path)
           response = MarketHub::HTTP.delete(endpoint, headers: { authorization: "Bearer #{@access_token}" })
           JSON.parse(response.body)

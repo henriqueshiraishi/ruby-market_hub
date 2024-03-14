@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.23.0] - 2024-03-14
+
+- Add Item Model to MercadoLivre
+- Add Variation Model to MercadoLivre
+- Fix item_id argument in variation class API
+
 ## [0.22.0] - 2024-03-12
 
 - Add domain method in category module

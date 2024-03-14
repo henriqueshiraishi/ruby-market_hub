@@ -11,6 +11,7 @@ module MarketHub
         attr_reader :currency
         attr_reader :catalog
         attr_reader :category
+        attr_reader :variation
         attr_reader :description
         attr_reader :image
         attr_reader :invoice
@@ -28,6 +29,7 @@ module MarketHub
             @currency = @user.currency['currency_id']
             @catalog = MarketHub::API::MercadoLivre::Catalog.new(access_token)
             @category = MarketHub::API::MercadoLivre::Category.new
+            @variation = MarketHub::API::MercadoLivre::Variation.new(access_token)
             @description = MarketHub::API::MercadoLivre::Description.new(access_token)
             @image = MarketHub::API::MercadoLivre::Image.new(access_token)
             @invoice = MarketHub::API::MercadoLivre::Invoice.new(access_token, @me['site_id'])
