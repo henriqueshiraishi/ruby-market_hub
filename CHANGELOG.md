@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.23.2] - 2024-03-15
+
+- Fix check new? method in Base Model
+
 ## [0.23.1] - 2024-03-14
 
 - Fix nomenclature in Item Model (MercadoLivre)

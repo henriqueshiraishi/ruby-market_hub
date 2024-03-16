@@ -26,7 +26,7 @@ require "minitest/autorun"
 
 # GLOBAL TOKEN VARIABLES
 # Configure valid tokens so that the tests can be carried out successfully.
-@@meli_access_token = 'APP_USR-7241495617113935-031413-c93f3c00431ee582fc7cdfdd492f8a88-1632856741'
+@@meli_access_token = 'APP_USR-7241495617113935-031508-84aabf5bb3a5836ac7eb5bd789feb5e5-1632856741'
 @@meli_user_id = '1632856741'
 @@meli_item_id = 'MLB4389178328'
 @@meli_order_id = '2000007487844160'

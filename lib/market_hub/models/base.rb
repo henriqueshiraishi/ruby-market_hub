@@ -34,7 +34,7 @@ module MarketHub
       end
 
       def new?
-        @id ? false : true
+        @id.to_s == "" ? true : false
       end
 
       def update?
