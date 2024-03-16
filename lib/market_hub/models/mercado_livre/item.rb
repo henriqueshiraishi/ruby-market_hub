@@ -54,8 +54,8 @@ module MarketHub
               end
 
               if json['id']
-                @id ||= json['id']
-                @item_id ||= json['id']
+                @id = json['id']
+                @item_id = json['id']
                 if !@description.to_s.empty? && (@was_new || client.description.find(@item_id).empty?)
                   client.description.create(@item_id, @description)
                 else
