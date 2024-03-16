@@ -31,8 +31,8 @@ module MarketHub
             @attributes = body.dig(:attributes) || body.dig('attributes')
             @status = body.dig(:status) || body.dig('status')
             @catalog_product_id = body.dig(:catalog_product_id) || body.dig('catalog_product_id')
-            @channel_markeplace = body.dig(:channel_markeplace) || (body.dig('channels').include?("marketplace") if body.dig('channels'))
-            @channel_mshops = body.dig(:channel_mshops) || (body.dig('channels').include?("mshops") if body.dig('channels'))
+            @channel_markeplace = (body.dig('channels') ? body.dig('channels').include?("marketplace") : body.dig(:channel_markeplace))
+            @channel_mshops = (body.dig('channels') ? body.dig('channels').include?("mshops") : body.dig(:channel_mshops))
           end
         end
 

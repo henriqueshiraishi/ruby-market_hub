@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.23.4] - 2024-03-15
+
+- Fix assign channel to variable in Item Model
+
 ## [0.23.3] - 2024-03-15
 
 - Fix assign id to variable in Item Model

@@ -43,8 +43,8 @@ module MarketHub
               end
 
               if json['id']
-                @id ||= json['id']
-                @variation_id ||= json['id']
+                @id = json['id']
+                @variation_id = json['id']
               elsif json['error']
                 errors.add(:item, (json['cause'].to_a.empty? ? json['message'] : json['cause'].to_a.map { |e| e['message'] }.join('. ')))
               else
