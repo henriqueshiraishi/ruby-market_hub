@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.23.5] - 2024-03-19
+
+- Fix find with merge in Variation Model
+
 ## [0.23.4] - 2024-03-15
 
 - Fix assign channel to variable in Item Model

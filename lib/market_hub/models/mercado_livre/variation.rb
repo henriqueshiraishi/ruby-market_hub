@@ -66,7 +66,7 @@ module MarketHub
 
         def self.find(client, item_id, variation_id)
           if client.connected?
-            self.new(client, { "item_id" => item_id }.merge(client.variation.find(item_id, variation_id)), { action: 'find' })
+            self.new(client, { "item_id" => item_id }.merge(client.variation.find(item_id, variation_id).to_h), { action: 'find' })
           end
         end
 

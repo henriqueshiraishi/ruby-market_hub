@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    market_hub (0.23.4)
+    market_hub (0.23.5)
 
 GEM
   remote: https://rubygems.org/
